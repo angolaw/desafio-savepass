@@ -42,7 +42,10 @@ export function Home() {
   function handleFilterLoginData() {
     // Filter results inside data, save with setSearchListData
     const filteredData = searchListData.filter((item) => {
-      if (item.service_name.includes(searchText)) {
+      const isValid = item.service_name
+        .toLowerCase()
+        .includes(searchText.toLowerCase());
+      if (isValid) {
         return item;
       }
     });
