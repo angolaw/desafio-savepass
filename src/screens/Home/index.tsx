@@ -50,6 +50,9 @@ export function Home() {
   }
 
   function handleChangeInputText(text: string) {
+    if (!text) {
+      setSearchListData(data);
+    }
     // Update searchText value
     setSearchText(text);
   }
